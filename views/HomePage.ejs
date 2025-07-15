@@ -9,9 +9,10 @@
 <body>
     
 
-    <%- include('partials/header') %>
+<%- include('partials/header', { currentRoute: currentRoute }) %>
+
 <h1 class="text-3xl text-blue-400">Helloo</h1>
-    <%- include('partials/footer') %>
+    <%- include('partials/footer', { currentRoute: currentRoute }) %>
 
 </body>
 </html>
