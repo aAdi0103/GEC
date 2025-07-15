@@ -4,17 +4,26 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Set EJS as the template engine
 app.set("view engine", "ejs");
 
-// Tell Express where your EJS templates are
 app.set("views", path.join(__dirname, "views"));
 
-// Serve static files (CSS, JS, images, etc.)
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-    res.render("index"); // This renders views/index.ejs
+    res.render("HomePage"); 
+});
+app.get("/AboutUs", (req, res) => {
+    res.render("AboutUs");
+});
+app.get("/StudyAbroad", (req, res) => {
+    res.render("StudyAbroad");
+});
+app.get("/StudyInIndia", (req, res) => {
+    res.render("StudyInIndia");
+});
+app.get("/Connet", (req, res) => {
+    res.render("Connet"); 
 });
 
 app.listen(PORT, () => {
