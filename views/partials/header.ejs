@@ -12,24 +12,35 @@
       </button>
     </div>
 
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex items-center gap-6 font-medium text-gray-800">
-      <li><a href="#" class="bg-gray-200 text-black px-4 py-1 rounded">Home</a></li>
-      <li><a href="#" class="hover:bg-gray-200 hover:text-black px-4 py-1 rounded">About Us</a></li>
-      <li><a href="#" class="hover:bg-gray-200 hover:text-black px-4 py-1 rounded">Study Abroad</a></li>
-      <li><a href="#" class="hover:bg-gray-200 hover:text-black px-4 py-1 rounded">Study in India</a></li>
-      <li><a href="#" class="hover:bg-gray-200 hover:text-black px-4 py-1 rounded">Contact</a></li>
-    </ul>
-  </div>
+<!-- Desktop Menu -->
+<ul class="hidden md:flex items-center gap-6 font-medium text-gray-800">
+  <li>
+    <a href="/" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'home' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Home</a>
+  </li>
+  <li>
+    <a href="/AboutUs" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'about' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">About Us</a>
+  </li>
+  <li>
+    <a href="/StudyAbroad" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'abroad' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Study Abroad</a>
+  </li>
+  <li>
+    <a href="/StudyInIndia" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'india' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Study in India</a>
+  </li>
+  <li>
+    <a href="/Connect" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'contact' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Contact</a>
+  </li>
+</ul>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden mt-4 space-y-2 hidden transition-all duration-300 ease-in-out bg-white shadow-md p-4 rounded">
-    <a href="#" class="block bg-gray-200 text-black px-4 py-2 rounded">Home</a>
-    <a href="#" class="block hover:bg-gray-200 hover:text-black px-4 py-2 rounded">About Us</a>
-    <a href="#" class="block hover:bg-gray-200 hover:text-black px-4 py-2 rounded">Study Abroad</a>
-    <a href="#" class="block hover:bg-gray-200 hover:text-black px-4 py-2 rounded">Study in India</a>
-    <a href="#" class="block hover:bg-gray-200 hover:text-black px-4 py-2 rounded">Contact</a>
-  </div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden mt-4 space-y-2 hidden transition-all duration-300 ease-in-out bg-white shadow-md p-4 rounded">
+  <a href="/" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'home' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Home</a>
+  <a href="/AboutUs" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'about' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">About Us</a>
+  <a href="/StudyAbroad" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'abroad' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Study Abroad</a>
+  <a href="/StudyInIndia" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'india' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Study in India</a>
+  <a href="/Connect" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'contact' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Contact</a>
+</div>
+
+
 
   <!-- Toggle + Outside Click Script -->
   <script>

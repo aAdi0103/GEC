@@ -22,7 +22,7 @@
 
 <body>
     
-    <%- include('partials/header') %>
+    <%- include('partials/header', { currentRoute: currentRoute }) %>
  <section
       class="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-center"
       style="background-image: url('/images/BackgroundInage.jpg');"
@@ -237,7 +237,7 @@
 
 
     
-    <%- include('partials/footer') %>
+        <%- include('partials/footer', { currentRoute: currentRoute }) %>
 
      <script>
 function scrollCardsLeft() {
