@@ -8,11 +8,15 @@
     <title>Document</title>
 </head>
 <style>
-    /* Hide scrollbar for all browsers */
-    .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-    }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 </style>
+
 
 <body>
 
@@ -45,192 +49,174 @@
             </p>
         </section>
 
-        <!-- What We Offer Section -->
-        <section class="bg-gray-100 px-6 md:px-28 py-6 md:py-4">
-            <h2 class="text-xl md:text-2xl font-semibold mb-6 text-gray-800">What We Offer</h2>
+        <section class="bg-gray-100 px-4 sm:px-8 md:px-28 py-10">
+  <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
+    What We Offer?
+  </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div onclick="openModal('Direct admission support')"
-                    class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition hover:scale-[1.02] duration-300">
-                    <div class="pt-8 pr-8 pl-8 pb-12">
-                        <img src="/images/HomePage1.jpg" alt="Offer 1" class="w-full h-44 object-cover rounded-md mb-4">
-                        <div class="text-center font-medium text-gray-800">Direct admission support</div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div onclick="openModal('B.Tech, M.Tech, MBA programs')"
-                    class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition hover:scale-[1.02] duration-300">
-                    <div class="pt-8 pr-8 pl-8 pb-12">
-                        <img src="/images/HomePage2.jpg" alt="Offer 2" class="w-full h-44 object-cover rounded-md mb-4">
-                        <div class="text-center font-medium text-gray-800">B.Tech, M.Tech, MBA</div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div onclick="openModal('MBBS, BDS, MDS, B.Pharma, Nursing, and more')"
-                    class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition hover:scale-[1.02] duration-300">
-                    <div class="pt-8 pr-8 pl-8 pb-12">
-                        <img src="/images/HomePage3.jpg" alt="Offer 3" class="w-full h-44 object-cover rounded-md mb-4">
-                        <div class="text-center font-medium text-gray-800">MBBS, BDS, MDS, B.Pharma, Nursing, and more
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Modal -->
-            <div id="offerModal"
-                class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-                <div class="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-1/2 relative">
-                    <button onclick="closeModal()"
-                        class="absolute top-2 right-3 text-gray-600 hover:text-red-600 text-2xl font-bold">&times;</button>
-                    <h3 class="text-lg font-semibold mb-2 text-gray-800">Offer Details</h3>
-                    <p id="modalContent" class="text-gray-700">Some info here...</p>
-                </div>
-            </div>
-
-            <!-- Inline JavaScript -->
-            <script>
-                function openModal(content) {
-                    document.getElementById("modalContent").innerText = content;
-                    document.getElementById("offerModal").classList.remove("hidden");
-                }
-
-                function closeModal() {
-                    document.getElementById("offerModal").classList.add("hidden");
-                }
-
-                // Close modal on click outside content
-                window.addEventListener("click", function (e) {
-                    const modal = document.getElementById("offerModal");
-                    if (e.target === modal) {
-                        closeModal();
-                    }
-                });
-            </script>
-        </section>
-        <!-- What We Offer Section 2-->
-
-        <section class="bg-gray-100 px-6 py-12">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-
-                <!-- What We Offer (1/3 Width) -->
-                <div class="md:col-span-1">
-                    <h3 class="text-3xl font-semibold mb-8 mt-2">What We Offer ?</h3>
-                    <div class="bg-white rounded-lg shadow-md p-6 space-y-4">
-                        <div class="flex items-start gap-2">
-                            <span class="text-green-600 text-lg">&#10148;</span>
-                            <p class="text-gray-700 text-lg  font-semibold">
-                                Direct admission support for B.Tech, M.Tech, MBBS, BDS, MDS, B.Pharma, Nursing, MBA, and
-                                more
-                            </p>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-green-600 text-lg">&#10148;</span>
-                            <p class="text-gray-700 text-lg  font-semibold">
-                                Expert counseling for both Indian and overseas education
-                            </p>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-green-600 text-lg">&#10148;</span>
-                            <p class="text-gray-700 text-lg   font-semibold">
-                                Tie-ups with globally accredited and government-approved institutions
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Our Global Footprint (2/3 Width) -->
-                <div class="md:col-span-2">
-                    <h3 class="text-3xl font-semibold mb-2">Our Global Footprint</h3>
-                    <p class="text-base md:text-xl text-gray-600 mb-4">
-                        We facilitate admissions in leading universities across
-                    </p>
-
-                    <!-- Carousel Wrapper with light background -->
-                   <div class="relative bg-white bg-opacity-90 py-6 rounded-lg shadow-inner">
-
-  <!-- Left Arrow -->
-  <button onclick="scrollCarousel(-1)"
-    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 text-2xl">
-    &#9665;
-  </button>
-
-  <!-- Carousel -->
-  <div id="carousel"
-    class="flex overflow-x-auto scroll-smooth space-x-8 px-12 pb-4 scrollbar-hide"
-    style="-ms-overflow-style: none; scrollbar-width: none;">
-
-    <% for (let i = 0; i < 10; i++) { %>
-      <div
-        class="flex-shrink-0 bg-white border border-gray-200 rounded-xl shadow-md p-5 w-40 md:w-48 h-48 flex flex-col justify-center items-center text-center">
-
-        <img src="/images/Flag_v 1.png" alt="Europe"
-          class="w-20 h-20 rounded-full mb-3 object-cover border border-gray-300" />
-
-        <span class="text-sm font-medium text-gray-700">Europe</span>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <!-- Card 1 -->
+    <div onclick="openModal('admission')"
+      class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition hover:scale-105 hover:shadow-xl duration-300">
+      <img src="/images/HomePage1.jpg" alt="Offer 1" class="w-full h-48 object-cover">
+      <div class="p-6 text-center">
+        <h3 class="text-lg font-bold text-gray-600">Direct Admission Support</h3>
       </div>
-    <% } %>
+    </div>
 
+    <!-- Card 2 -->
+    <div onclick="openModal('counseling')"
+      class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition hover:scale-105 hover:shadow-xl duration-300">
+      <img src="/images/HomePage2.jpg" alt="Offer 2" class="w-full h-48 object-cover">
+      <div class="p-6 text-center">
+        <h3 class="text-lg font-bold text-gray-600">Expert Counseling</h3>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div onclick="openModal('tieups')"
+      class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform transition hover:scale-105 hover:shadow-xl duration-300">
+      <img src="/images/HomePage3.jpg" alt="Offer 3" class="w-full h-48 object-cover">
+      <div class="p-6 text-center">
+        <h3 class="text-lg font-bold text-gray-600">Tie-Ups</h3>
+      </div>
+    </div>
   </div>
 
-  <!-- Right Arrow -->
-  <button onclick="scrollCarousel(1)"
-    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 text-2xl">
-    &#9655;
-  </button>
+  <!-- Modal -->
+  <div id="offerModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/2 relative">
+      <button onclick="closeModal()"
+        class="absolute top-2 right-3 text-gray-600 hover:text-red-600 text-2xl font-bold">&times;</button>
+      <h3 class="text-xl font-bold mb-3 text-gray-800">Offer Details</h3>
+      <p id="modalContent" class="text-gray-700">Some info here...</p>
+    </div>
+  </div>
 
-</div>
+  <script>
+    const contentMap = {
+      admission: "• Direct admission support for B.Tech, M.Tech, MBBS, BDS, MDS, B.Pharma, Nursing, MBA, and more.",
+      counseling: "• Expert counseling and career guidance tailored to your academic and professional goals.",
+      tieups: "• Tie-ups with globally accredited and government-approved institutions for international education."
+    };
+
+    function openModal(key) {
+      const content = contentMap[key] || "Information not found.";
+      document.getElementById("modalContent").innerText = content;
+      document.getElementById("offerModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("offerModal").classList.add("hidden");
+    }
+
+    window.addEventListener("click", function (e) {
+      const modal = document.getElementById("offerModal");
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</section>
 
 
-                </div>
 
+       <section class="bg-gray-100 px-4 sm:px-6 py-12">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header Section -->
+    <div class="mb-6 text-center sm:text-left sm:pl-2">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-800">
+Our Global Footprint  </h2>
+      <h2 class="text-xl md:text-2xl font-medium text-center text-gray-700">
+We facilitate admissions in leading universities across </h2>
+    </div>
 
+    <!-- Card + Navigation -->
+    <div class="flex items-center justify-center gap-3">
+      <!-- Left Button -->
+      <button
+        onclick="scrollCardsLeft()"
+        class="hidden sm:inline-flex bg-white hover:bg-blue-100 border border-gray-300 text-blue-600 text-xl p-3 rounded-full shadow"
+      >
+        &#10094;
+      </button>
+
+      <!-- Scrollable Card Container -->
+      <div
+        id="cardContainer"
+        class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar py-2 w-full"
+      >
+        <% const countries = [
+          { title: "Europe", image: "/images/flags/uk.png" },
+          { title: "USA", image: "/images/flags/usa.png" },
+          { title: "Canada", image: "/images/flags/canada.png" },
+          { title: "Australia", image: "/images/flags/australia.png" },
+          { title: "Germany", image: "/images/flags/germany.png" },
+          { title: "France", image: "/images/flags/france.png" },
+          { title: "Italy", image: "/images/flags/italy.png" },
+          { title: "Singapore", image: "/images/flags/singapore.png" },
+          { title: "New Zealand", image: "/images/flags/nz.png" }
+        ]; %>
+
+        <% countries.forEach((item) => { %>
+          <div class="bg-white rounded-xl border border-gray-200 shadow p-4 min-w-[190px] max-w-[190px] text-center snap-start">
+            <div class="w-28 h-28 mx-auto mb-3">
+              <img
+                src="<%= item.image %>"
+                alt="<%= item.title %>"
+                class="w-full h-full object-cover rounded-full border"
+              />
             </div>
-        </section>
+            <button class="w-full bg-gray-100 text-gray-800 text-sm py-1 rounded-md hover:bg-gray-200 transition font-medium">
+              <%= item.title %>
+            </button>
+          </div>
+        <% }); %>
+      </div>
+
+      <!-- Right Button -->
+      <button
+        onclick="scrollCardsRight()"
+        class="hidden sm:inline-flex bg-white hover:bg-blue-100 border border-gray-300 text-blue-600 text-xl p-3 rounded-full shadow"
+      >
+        &#10095;
+      </button>
+    </div>
+  </div>
+</section>
+
+
 
         <!-- Last Section -->
         <section class="relative w-full bg-cover bg-center bg-no-repeat py-16 text-center"
-            style="background-image: url('/images/2ndpagelast.png');">
+    style="background-image: url('/images/2ndpagelast.png');">
 
-            <!-- Overlay -->
-            <div class="absolute inset-0 z-0" style="background-color: rgba(21, 127, 25, 0.801);"></div>
+    <!-- Overlay -->
+    <div class="absolute inset-0 z-0" style="background-color: rgba(21, 127, 25, 0.801);"></div>
 
-            <!-- Text Content -->
-            <div class="relative z-10 w-full px-6 md:px-12 text-white max-w-screen-xl mx-auto">
-                <h2 class="text-2xl md:text-4xl font-bold leading-loose">
-                    Unlock global careers in medicine, engineering,<br>
-                    and health sciences – GEC connects your<br>
-                    ambition with international education and<br>
-                    limitless opportunities.
-                </h2>
+    <!-- Text Content -->
+    <div class="relative z-10 w-full px-4 sm:px-6 md:px-12 text-white max-w-screen-xl mx-auto">
+    <h2 class="text-base sm:text-lg md:text-3xl font-semibold md:font-bold leading-snug md:leading-normal">
+        Unlock global careers in medicine, engineering and health sciences.
+        GEC connects your ambition with international education and limitless opportunities.
+    </h2>
+</div>
 
-            </div>
-        </section>
-
-
-
-
-
-
-        <!-- Carousel Scroll Script -->
-        <script>
-            function scrollCarousel(direction) {
-                const carousel = document.getElementById("carousel");
-                const cardWidth = 160; // adjust if card width changes
-                carousel.scrollBy({
-                    left: direction * cardWidth,
-                    behavior: 'smooth'
-                });
-            }
-        </script>
+</section>
 
 
 
 
         <%- include('partials/footer', { currentRoute: currentRoute }) %>
+
+ <script>
+  function scrollCardsLeft() {
+    document.getElementById("cardContainer").scrollBy({ left: -300, behavior: "smooth" });
+  }
+  function scrollCardsRight() {
+    document.getElementById("cardContainer").scrollBy({ left: 300, behavior: "smooth" });
+  }
+</script>
 
 </body>
 
