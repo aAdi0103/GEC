@@ -1,72 +1,89 @@
-<nav class="bg-white shadow-md px-6 py-4 relative z-50">
+<nav class="bg-white shadow-md px-6 py-4 sticky top-0 z-50">
   <div class="flex items-center justify-between">
     <!-- Logo -->
-    <div class="flex items-center">
-      <img src="/images/logo.png" alt="Global Education Council" class="h-10" />
+    <div id="nav-logo" class="flex items-center">
+      <img src="/images/logo.png" alt="Global Education Council" class="h-10 w-auto" />
     </div>
 
-    <!-- Hamburger / Close Icon (Mobile) -->
+    <!-- Hamburger Icon (Mobile) -->
     <div class="md:hidden">
       <button id="mobile-menu-toggle" class="text-blue-600 text-3xl focus:outline-none">
-        <span id="menu-icon">&#9776;</span> <!-- ☰ -->
+        <span id="menu-icon">&#9776;</span>
       </button>
     </div>
 
-<!-- Desktop Menu -->
-<ul class="hidden md:flex items-center gap-6 font-medium text-gray-800">
-  <li>
-    <a href="/" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'home' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Home</a>
-  </li>
-  <li>
-    <a href="/AboutUs" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'about' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">About Us</a>
-  </li>
-  <li>
-    <a href="/StudyAbroad" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'abroad' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Study Abroad</a>
-  </li>
-  <li>
-    <a href="/StudyInIndia" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'india' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Study in India</a>
-  </li>
-  <li>
-    <a href="/Connect" class="px-4 py-1 rounded transition duration-200 <%= currentRoute === 'contact' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Contact</a>
-  </li>
-</ul>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center gap-6 font-medium text-gray-800">
+      <% const navItems=[ { name: 'Home' , path: '/' , key: 'home' }, { name: 'About Us' , path: '/AboutUs' ,
+        key: 'about' }, { name: 'Study Abroad' , path: '/StudyAbroad' , key: 'abroad' }, { name: 'Study in India' ,
+        path: '/StudyInIndia' , key: 'india' }, { name: 'Contact' , path: '/Connect' , key: 'contact' } ]; %>
+        <% navItems.forEach(item=> { %>
+          <li class="relative group">
+            <a href="<%= item.path %>" class="px-4 py-1 rounded transition duration-200 
+        <%= currentRoute === item.key 
+          ? 'bg-blue-100 text-blue-600 font-semibold' 
+          : 'hover:text-blue-600' %>">
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="md:hidden mt-4 space-y-2 hidden transition-all duration-300 ease-in-out bg-white shadow-md p-4 rounded">
-  <a href="/" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'home' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Home</a>
-  <a href="/AboutUs" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'about' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">About Us</a>
-  <a href="/StudyAbroad" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'abroad' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Study Abroad</a>
-  <a href="/StudyInIndia" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'india' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Study in India</a>
-  <a href="/Connect" class="block px-4 py-2 rounded transition duration-200 <%= currentRoute === 'contact' ? 'bg-gray-200 text-black' : 'hover:bg-gray-200 hover:text-black' %>">Contact</a>
-</div>
+              <%= item.name %>
+
+                <!-- Animated underline -->
+                <span
+                  class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          </li>
+          <% }) %>
+    </ul>
+
+  </div>
+
+  <div id="mobile-menu"
+    class="md:hidden absolute top-[90px] left-4 right-4 mt-1 space-y-2 bg-gray-100 shadow-lg rounded-2xl p-4 opacity-0 scale-95 pointer-events-none transition-all duration-300 ease-in-out z-40">
+    <% navItems.forEach(item=> { %>
+      <a href="<%= item.path %>" class="block px-4 py-2 rounded-lg transition duration-200 
+      <%= currentRoute === item.key 
+        ? 'bg-blue-100 text-blue-600 font-semibold' 
+        : 'hover:bg-gray-100 hover:text-blue-600' %>">
+        <%= item.name %>
+      </a>
+      <% }) %>
+  </div>
 
 
 
-  <!-- Toggle + Outside Click Script -->
   <script>
     const toggleBtn = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
-
+    const navLogo = document.getElementById('nav-logo');
     toggleBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      mobileMenu.classList.toggle('hidden');
 
-      // Toggle icon between ☰ and ✖
-      menuIcon.innerHTML = mobileMenu.classList.contains('hidden') ? '&#9776;' : '&#10005;';
-    });
+      const isHidden = mobileMenu.classList.contains('opacity-0');
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function (event) {
-      if (!mobileMenu.classList.contains('hidden')) {
-        const isClickInsideMenu = mobileMenu.contains(event.target);
-        const isClickOnToggle = toggleBtn.contains(event.target);
+      if (isHidden) {
+        mobileMenu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+        mobileMenu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+        menuIcon.innerHTML = '&#10005;';
+      } else {
+        mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        mobileMenu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
 
-        if (!isClickInsideMenu && !isClickOnToggle) {
-          mobileMenu.classList.add('hidden');
-          menuIcon.innerHTML = '&#9776;'; // reset to hamburger
-        }
+        menuIcon.innerHTML = '&#9776;';
       }
     });
+
+
+    document.addEventListener('click', function (event) {
+      const isHidden = mobileMenu.classList.contains('opacity-0');
+      const isClickInsideMenu = mobileMenu.contains(event.target);
+      const isClickOnToggle = toggleBtn.contains(event.target);
+
+      if (!isHidden && !isClickInsideMenu && !isClickOnToggle) {
+        mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        mobileMenu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+        menuIcon.innerHTML = '&#9776;';
+      }
+    });
+
   </script>
 </nav>

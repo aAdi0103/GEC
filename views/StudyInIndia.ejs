@@ -1,18 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css" />
+  <title>Study in India - GEC</title>
 </head>
 <body>
-    
 
   <%- include('partials/header', { currentRoute: currentRoute }) %>
 
-<h1 class="text-3xl text-blue-400">Helloo</h1>
-    <%- include('partials/footer', { currentRoute: currentRoute }) %>
+  <!-- Hero Section -->
+  <section class="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+    <img src="/images/studyinindiamain.jpg" alt="Education Background"
+      class="absolute inset-0 w-full h-full object-cover filter brightness-50 blur-sm scale-110 z-0" />
+    <div class="relative z-10 flex items-center justify-center h-full text-center px-4">
+      <h1 class="text-white text-3xl md:text-5xl font-bold leading-snug">
+        Discover <span class="text-orange-500">World</span>-Class <span class="text-orange-500">Education</span> in India
+      </h1>
+    </div>
+  </section>
+
+  <!-- Intro Message -->
+<section class="w-full bg-white text-center">
+  <div class="w-full bg-[#FFF4E8] py-6 px-4 sm:px-6 md:px-8">
+    <h2 class="text-lg sm:text-2xl md:text-3xl font-bold text-gray-900 max-w-4xl mx-auto">
+      Top Indian Colleges. Guaranteed Admission. Affordable Excellence
+    </h2>
+  </div>
+  <div class="px-4 sm:px-6 md:px-8">
+    <p class="text-base sm:text-lg md:text-xl font-medium text-gray-700 max-w-4xl mx-auto mt-4 mb-6">
+      India is home to globally respected educational institutions in engineering and medical sciences.
+      GEC enables students to access the best Indian private and government-approved colleges with expert guidance.
+    </p>
+  </div>
+</section>
+
+
+  <section>
+  <div class="bg-orange-50 py-10 px-4">
+    <h2 class="text-center text-xl md:text-2xl font-semibold text-gray-800 mb-8">
+      Top Engineering Streams <span class="font-normal text-gray-600">(B.Tech / M.Tech)</span>
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+      <!-- Engineering Cards -->
+      <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800">AI & ML</h3>
+        <p class="text-sm text-gray-600">Dominates job Market in Automation, Analytics, Robotics</p>
+        <span class="text-gray-400 text-sm mt-2">↗</span>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800">Computer Science</h3>
+        <p class="text-sm text-gray-600">Core of Digital India, IT Sector, App/Web Dev</p>
+        <span class="text-gray-400 text-sm mt-2">↗</span>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800">Electronics & Communication</h3>
+        <p class="text-sm text-gray-600">Booming Due to IoT, 5G, Smart Devices</p>
+        <span class="text-gray-400 text-sm mt-2">↗</span>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800">Mechanical Engineering</h3>
+        <p class="text-sm text-gray-600">Key for EVs, aerospace, robotics manufacturing</p>
+        <span class="text-gray-400 text-sm mt-2">↗</span>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800">Civil Engineering</h3>
+        <p class="text-sm text-gray-600">Critical in Smart Cities, Infrastructure, Sustainability</p>
+        <span class="text-gray-400 text-sm mt-2">↗</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-green-50 py-10 px-4">
+  <h2 class="text-center text-xl md:text-2xl font-semibold text-gray-800 mb-8">
+    Top Medical & Allied Health Courses <span class="font-normal text-gray-600">(Infographic)</span>
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+    <!-- Medical Cards -->
+    <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-gray-800">MBBS</h3>
+      <p class="text-sm text-gray-600">Increasing demand in public/private hospitals & telehealth</p>
+      <span class="text-gray-400 text-sm mt-2">↗</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-gray-800">BDS / MDS</h3>
+      <p class="text-sm text-gray-600">Dentistry boom due to awareness in oral health</p>
+      <span class="text-gray-400 text-sm mt-2">↗</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-gray-800">B. Pharma</h3>
+      <p class="text-sm text-gray-600">Big rise in pharmaceutical R&D and retail</p>
+      <span class="text-gray-400 text-sm mt-2">↗</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-gray-800">Nursing<br><span class="text-sm font-medium">(B.Sc / GNM / ANM)</span></h3>
+      <p class="text-sm text-gray-600">High global demand post-COVID</p>
+      <span class="text-gray-400 text-sm mt-2">↗</span>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md p-6 text-center space-y-2 hover:scale-105 hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold text-gray-800">Allied Health Sciences</h3>
+      <p class="text-sm text-gray-600">Diagnostic labs, radiology, physiotherapy booming</p>
+      <span class="text-gray-400 text-sm mt-2">↗</span>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Why Choose GEC Section -->
+  <section class="w-full bg-[#F7F7F9] py-12 px-4 sm:px-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <!-- Left Content -->
+      <div class="md:w-1/2">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6">
+          Why Choose GEC for Indian Admissions
+        </h2>
+        <div class="bg-white rounded-xl shadow-md p-6 space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="text-green-600 text-lg">➤</span>
+            <p class="text-gray-800 text-base sm:text-lg">
+              Expert Guidance for NEET/JEE & Management Quota
+            </p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-green-600 text-lg">➤</span>
+            <p class="text-gray-800 text-base sm:text-lg">
+              Tie-ups with AICTE/UGC/PCI/NMC-approved colleges
+            </p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-green-600 text-lg">➤</span>
+            <p class="text-gray-800 text-base sm:text-lg">
+              Hostel, Scholarships & Documentation Support
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="md:w-1/2">
+        <img src="/images/studyinindia2nd.png" alt="Graduation caps" class="rounded-xl shadow-md w-full h-auto object-cover" />
+      </div>
+    </div>
+  </section>
+
+<!-- Stay Rooted Section -->
+<section class="w-full bg-blue-100 py-6 px-4 sm:px-8 md:px-12">
+  <h3 class="text-center text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 tracking-wide leading-snug">
+    <span class="font-bold">Stay Rooted, Rise High, Study</span>
+    <span class="font-normal"> in <span class="font-extrabold">India</span> or <span class="font-extrabold">Abroad</span></span>
+  </h3>
+</section>
+
+ 
+
+
+  <%- include('partials/footer', { currentRoute: currentRoute }) %>
 
 </body>
 </html>
