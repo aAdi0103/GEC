@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
      <link rel="stylesheet" href="/style.css">
-    <title>Document</title>
+     <!-- Roboto Google Font -->
+    <title>Home</title>
 </head>
 
 <style>
@@ -20,38 +22,39 @@
   }
 </style>
 
-<body>
+<body class="font-roboto" >
     
     <%- include('partials/header', { currentRoute: currentRoute }) %>
- <section
-      class="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-center"
-      style="background-image: url('/images/BackgroundInage.jpg');"
-    >
-      <div class="absolute inset-0 bg-black/60"></div>
-      <div class="relative z-10 max-w-6xl px-4">
-        <h1 class="text-3xl md:text-5xl font-semibold text-white leading-tight">
-          <span class="text-orange-400 font-bold mb-1">Your</span> Gateway <span class="text-gray-300">to</span> <br>
-          <span class="text-yellow-400 font-bold">World-Class <span class="text-white">Education – In</span> India <span class="font-thin text-white">and</span> Beyond
-        </h1>
-        <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-  <!-- Primary Button -->
-  <a
-    href="#"
-    class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300 ease-in-out text-lg font-semibold tracking-wide"
-  >
-    Explore Courses
-  </a>
+<section
+  class="relative bg-cover bg-center h-[450px] sm:h-[400px] md:h-[540px] overflow-hidden flex items-center justify-center text-center"
+  style="background-image: url('/images/BackgroundInage.jpg');"
+>
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="relative z-10 max-w-6xl px-4">
+    <h1 class="text-3xl md:text-5xl font-semibold text-white leading-tight">
+      <span class="text-orange-400 font-bold mb-1">Your</span> Gateway <span class="text-gray-300">to</span> <br>
+      <span class="text-yellow-400 font-bold">World-Class <span class="text-white">Education – In</span> India <span class="font-thin text-white">and</span> Beyond
+    </h1>
+    <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+      <!-- Primary Button -->
+      <a
+        href="#"
+        class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition duration-300 ease-in-out text-lg font-semibold tracking-wide"
+      >
+        Explore Courses
+      </a>
 
-  <!-- Secondary Button -->
-  <a
-    href="#"
-    class="px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 hover:shadow-md transition duration-300 ease-in-out text-lg font-medium tracking-wide"
-  >
-    View Pricing
-  </a>
-</div>
-      </div>
-    </section>
+      <!-- Secondary Button -->
+      <a
+        href="#"
+        class="px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 hover:shadow-md transition duration-300 ease-in-out text-lg font-medium tracking-wide"
+      >
+        View Pricing
+      </a>
+    </div>
+  </div>
+</section>
+
 
 
 
