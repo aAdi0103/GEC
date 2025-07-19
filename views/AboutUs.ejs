@@ -24,23 +24,143 @@
 
   <%- include('partials/header', { currentRoute: currentRoute }) %>
     <!--  hero section  -->
-   <section
-  class="relative bg-cover bg-center h-[400px] sm:h-[400px] md:h-[540px] lg:h-[75vh] overflow-hidden flex items-center justify-center"
-  style="background-image: url('/images/BackgroundInage.jpg');"
->
-  <div class="bg-black bg-opacity-40 absolute inset-0"></div>
+<section class="relative text-white overflow-hidden">
 
-  <div class="relative text-center text-white px-4 max-w-3xl">
-    <h1 class="text-3xl md:text-5xl font-semibold leading-tight">
-      Your <span class="text-white font-bold">Trusted</span>
-      <span class="text-yellow-400 font-bold">Admission</span> &
-      <span class="text-yellow-400 font-bold">Career</span> Guide since
-      <span class="text-white font-bold">2005</span>
+  <!-- Desktop Layout -->
+  <div class="hidden md:flex h-[80vh] max-h-[700px]">
+  <!-- Left Video -->
+  <div class="w-[16%] h-full">
+    <img class="w-full h-full object-cover" src="/images/left.jpg" alt="">
+  </div>
+
+  <!-- Center Carousel + Text -->
+  <div class="relative w-[68%] flex items-center justify-center overflow-hidden">
+  <!-- Text Overlay -->
+  <div class="absolute top-1/4 z-30 text-center px-4 w-full">
+    <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[4.5vw] font-extrabold leading-tight tracking-tight space-y-4">
+      <span class="block text-white" style="text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);">
+        Your Trusted<span class="text-orange-400"> Admission &</span> <span class="text-orange-400">Career</span> Guide
+      </span>
+      <span class="block text-white mt-2 text-2xl lg:text-3xl" style="text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);">
+        Since 2005
+      </span>
     </h1>
   </div>
+
+  <!-- Carousel Images -->
+  <div class="w-full h-full overflow-hidden relative">
+    <div id="carousel-desktop" class="h-full flex transition-transform duration-[1000ms] ease-in-out">
+      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide1.jpg" alt="">
+      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide2.jpg" alt="">
+      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide3.jpg" alt="">
+      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide4.jpg" alt="">
+    </div>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50 z-10 pointer-events-none"></div>
+  </div>
+  </div>
+
+
+  <!-- Right Video -->
+  <div class="w-[16%] h-full">
+        <img class="w-full h-full object-cover" src="/images/right.jpg" alt="">
+  </div>
+</div>
+
+
+  <!-- Mobile Layout -->
+<div class="flex flex-col md:hidden">
+    <!-- Carousel -->
+   <div class="relative w-full h-[50vh] sm:h-[60vh]">
+  <!-- Text Section -->
+  <div class="absolute top-1/4 z-30 text-center px-4 w-full">
+  <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[4.5vw] font-extrabold leading-snug tracking-tight">
+    <span class="block text-white font-extrabold" style="text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);">
+      Your Trusted 
+      <span class="text-orange-400 font-extrabold">Admission &</span> 
+      <span class="text-orange-400 font-extrabold">Career</span> Guide
+    </span>
+    <span class="block text-white mt-1 text-xl sm:text-2xl lg:text-3xl font-bold" style="text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);">
+      Since 2005
+    </span>
+  </h1>
+</div>
+
+
+
+  <!-- Image Carousel -->
+  <div class="w-full h-full overflow-hidden relative">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+    <!-- Carousel Images -->
+    <div id="carousel-mobile" class="h-full flex transition-transform duration-[1000ms] ease-in-out z-0">
+      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide1.jpg" alt="">
+      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide2.jpg" alt="">
+      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide3.jpg" alt="">
+      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide4.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+
+    <!-- Videos with spacing -->
+    <hr class="my-3 border-gray-600" />
+
+    <div class="w-full h-[15vh]">
+          <img class="w-full h-full object-cover" src="/images/left.jpg" alt="">
+
+    </div>
+
+    <hr class="my-3 border-gray-600" />
+
+    <div class="w-full h-[15vh] mb-4">
+          <img class="w-full h-full object-cover" src="/images/right.jpg" alt="">
+
+    </div>
+  </div>
+
+<script>
+  function setupInfiniteCarousel(id) {
+    const carousel = document.getElementById(id);
+    if (!carousel) return; // safeguard if element not found
+
+    const slides = Array.from(carousel.children);
+    const slideCount = slides.length;
+
+    // Clone first slide and append
+    const firstClone = slides[0].cloneNode(true);
+    carousel.appendChild(firstClone);
+
+    let index = 0;
+
+    function moveSlide() {
+      index++;
+      carousel.style.transition = "transform 1s ease-in-out";
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+
+      // When it reaches the clone, reset to the original first slide
+      if (index === slideCount) {
+        setTimeout(() => {
+          carousel.style.transition = "none";
+          carousel.style.transform = `translateX(0%)`;
+          index = 0;
+        }, 1000);
+      }
+    }
+
+    setInterval(moveSlide, 3000);
+  }
+
+  // Call for both carousels
+  setupInfiniteCarousel("carousel-desktop");
+  setupInfiniteCarousel("carousel-mobile");
+</script>
+
+
+
 </section>
-
-
 
     <!-- About Banner Section -->
   <section class="bg-[#fdf3e9] text-center px-6 py-8 md:px-56 py-4 md:py-8 mb-6 md:mb-0">
