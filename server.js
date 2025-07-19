@@ -36,23 +36,26 @@ app.post("/submit-form", async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "amantoma700@gmail.com", // your email
-      pass: "idht ietm hgqc zgml",   // Gmail app password
+      user: "chatdesk.gec@gmail.com", // your email
+      pass: "xcng loqj xbdy hmmt",   // Gmail app password
     },
   });
 
   let mailOptions = {
-    from: `"Admission Inquiry" <amantoma700@gmail.com>`,
-    to: "amantoma700@gmail.com",
-    subject: "New Admission Inquiry",
-    html: `
-      <h3>Contact Details</h3>
+  from: `"Admission Inquiry" <chatdesk.gec@gmail.com>`,
+  to: "chatdesk.gec@gmail.com",
+  replyTo: email,
+  subject: "New Admission Inquiry",
+  html: `
+    <div style="font-family: Arial; color: #333;">
+      <h2>📩 New Admission Inquiry</h2>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Mobile:</strong> ${mobile}</p>
-      <p><strong>Remark:</strong><br>${remark}</p>
-    `,
-  };
+      <p><strong>Remark:</strong><br>${remark.replace(/\n/g, "<br>")}</p>
+    </div>
+  `,
+};
 
   try {
     await transporter.sendMail(mailOptions);
