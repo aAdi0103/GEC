@@ -8,7 +8,15 @@
 </head>
 <body class="font-roboto">
 
+
   <%- include('partials/header', { currentRoute: currentRoute }) %>
+
+
+<!-- ✅ Success Toast -->
+<div id="toast-success" class="fixed top-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 hidden transition-opacity duration-300 z-50">
+   Submitted successfully!
+</div>
+
 
   <!-- Hero Section -->
   <section class="relative w-full h-[400px] sm:h-[400px] md:h-[540px] lg:h-[75vh] overflow-hidden">
@@ -27,8 +35,9 @@
     </div>
   </section>
 
-  <!-- Get In Touch Section -->
-  <section id="contact" class="bg-white mt-[-10px] py-6 px-4 sm:px-6 lg:px-12">
+  
+  <!-- Contact Form -->
+  <section id="contact" class="bg-white mt-[-10px] py-10 px-4 sm:px-6 lg:px-12">
     <div class="max-w-7xl mx-auto bg-white shadow-2xl rounded-3xl p-10 border border-gray-200">
       <h2 class="text-4xl font-bold text-center text-gray-900 mb-1">Get In Touch</h2>
       <p class="text-center text-gray-600 mb-10 text-lg">Welcome! Please fill in the details below, and we'll get back to you.</p>
@@ -62,7 +71,7 @@
             class="w-full px-5 py-3 border border-gray-300 rounded-lg resize-none shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none" required></textarea>
         </div>
 
-        <!-- Submit Button Full Width -->
+        <!-- Submit Button -->
         <div class="col-span-1 lg:col-span-2">
           <button type="submit"
             class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold text-lg py-4 rounded-lg transition duration-300">
@@ -72,6 +81,11 @@
       </form>
     </div>
   </section>
+
+
+  
+
+
 
   <!-- Footer Section -->
   <footer class="bg-gray-50 text-gray-800 py-12 px-4 sm:px-10">
@@ -95,6 +109,30 @@
 
     </div>
   </footer>
+
+  <!-- Toast Script -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const success = params.get("success");
+
+    if (success === "true") {
+      const toast = document.getElementById("toast-success");
+      toast.classList.remove("hidden");
+      setTimeout(() => toast.classList.add("opacity-100"), 50); // Fade In
+
+      setTimeout(() => {
+        toast.classList.remove("opacity-100"); // Fade Out
+        setTimeout(() => toast.classList.add("hidden"), 300);
+      }, 3000);
+
+      // Reset the form
+      const form = document.querySelector("form");
+      if (form) form.reset();
+
+      // Clean URL
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+  </script>
 
   <%- include('partials/footer', { currentRoute: currentRoute }) %>
 
