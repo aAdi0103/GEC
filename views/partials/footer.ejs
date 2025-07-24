@@ -2,92 +2,134 @@
 
   <!-- Mobile Layout (sm:hidden) -->
   <div class="flex flex-col gap-8 px-4 sm:hidden">
-    <!-- Row 1: Logo + Social Links -->
-    <div class="flex items-center justify-between">
-      <a href="/">
-        <img src="/images/logo.png" alt="Global Education Council" class="h-12" />
+   <!-- Logo + Social Links (Row 1) and Description (Row 2) -->
+<div class="w-full sm:w-[45%] md:w-[22%] flex flex-col items-start gap-4">
+  <!-- Row 1: Logo and Social Icons -->
+  <div class="flex items-center justify-start gap-4">
+    <!-- Logo -->
+    <a href="/">
+      <img src="/images/logo.png" alt="Global Education Council" class="h-12" />
+    </a>
+    <!-- Social Links -->
+    <div class="flex gap-2 ml-16">
+      <a href="https://facebook.com" target="_blank" class="hover:opacity-75">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-5 h-5 object-contain" />
       </a>
-      <div class="flex gap-3">
-        <a href="https://facebook.com" target="_blank" class="hover:opacity-75">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-6 h-6 object-contain" />
-        </a>
-        <a href="https://twitter.com" target="_blank" class="hover:opacity-75">
-          <img src="/images/twiter.png" alt="Twitter" class="w-6 h-6 object-cover rounded" />
-        </a>
-        <a href="https://instagram.com" target="_blank" class="hover:opacity-75">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-6 h-6 object-contain rounded" />
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="hover:opacity-75">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="w-6 h-6 object-contain" />
-        </a>
-        <a href="https://youtube.com" target="_blank" class="hover:opacity-75">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="w-6 h-6 object-contain rounded" />
-        </a>
-      </div>
+      <a href="https://twitter.com" target="_blank" class="hover:opacity-75">
+        <img src="/images/twiter.png" alt="Twitter" class="w-5 h-5 object-cover rounded" />
+      </a>
+      <a href="https://instagram.com" target="_blank" class="hover:opacity-75">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-5 h-5 object-contain rounded" />
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="hover:opacity-75">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="w-5 h-5 object-contain" />
+      </a>
+      <a href="https://youtube.com" target="_blank" class="hover:opacity-75">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="w-5 h-5 object-contain rounded" />
+      </a>
     </div>
+  </div>
 
-    <!-- Row 2: Contact Info Only (Navigation Removed) -->
-    <div>
-      <h3 class="font-semibold mb-2 text-lg text-blue-700">Contact Info</h3>
-      <ul class="space-y-2 text-sm">
-        <li class="flex items-start gap-2">
-          <span class="text-blue-600">📍</span>
-          <a href="https://www.google.com/maps?q=705,+Flat+no+203,+Sector+5,+Vaishali,+Ghaziabad,+Uttar+Pradesh,+201010" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">
-            705, Flat no 203,<br>Sector 5, Vaishali,<br>Ghaziabad, Uttar Pradesh<br>Pin - 201010
-          </a>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-blue-600">📧</span>
-          <a href="mailto:chatdesk.gec@gmail.com" class="text-blue-700 underline hover:underline break-all">
-            chatdesk.gec@gmail.com
-          </a>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-blue-600">📞</span>
-          <a href="tel:+919392679540" class="text-blue-700 underline hover:underline">
-            +91 9392679540
-          </a>
-        </li>
-      </ul>
-    </div>
+  <!-- Row 2: Description -->
+  <p class="text-sm text-gray-500">
+    With 20+ years of experience, Global Education Council provides expert guidance and admission support for engineering, medical, pharmacy, nursing, and management courses in India and abroad.
+  </p>
+</div>
+
+
+ <!-- Row 2: Contact Info with PNG Icons -->
+<div>
+  <h3 class="font-semibold mb-2 text-lg text-blue-700">Contact Info</h3>
+  <ul class="space-y-3 text-sm text-blue-700">
+
+    <!-- Address (Google Maps PNG Icon) -->
+    <li class="flex items-start gap-2">
+      <img src="https://img.icons8.com/color/48/000000/google-maps-new.png" 
+           alt="Google Maps" class="w-5 h-5 mt-1" />
+      <a href="https://www.google.com/maps?q=705,+Flat+no+203,+Sector+5,+Vaishali,+Ghaziabad,+Uttar+Pradesh,+201010" 
+         target="_blank" rel="noopener noreferrer" class="hover:underline">
+        705, Flat no 203,<br>Sector 5, Vaishali,<br>Ghaziabad, Uttar Pradesh<br>Pin - 201010
+      </a>
+    </li>
+
+    <!-- Email (Gmail PNG Icon) -->
+    <li class="flex items-start gap-2">
+      <img src="https://img.icons8.com/color/48/000000/gmail--v1.png" 
+           alt="Gmail" class="w-5 h-5 mt-1" />
+      <a href="mailto:chatdesk.gec@gmail.com" class="underline hover:underline break-all">
+        chatdesk.gec@gmail.com
+      </a>
+    </li>
+
+    <!-- Phone (Phone PNG Icon) -->
+    <li class="flex items-start gap-2">
+      <img src="https://img.icons8.com/fluency/48/000000/phone.png" 
+           alt="Phone" class="w-5 h-5 mt-1" />
+      <a href="tel:+919392679540" class="underline hover:underline">
+        +91 9392679540
+      </a>
+    </li>
+
+  </ul>
+</div>
+
   </div>
 
   <!-- Desktop Layout (hidden sm:flex) -->
   <div class="hidden sm:flex px-6 lg:px-8 mt-10 flex-wrap justify-between gap-y-10 sm:gap-y-16">
-    <!-- Logo -->
-    <div class="w-full sm:w-[45%] md:w-[22%]">
-      <a href="/">
-        <img src="/images/logo.png" alt="Global Education Council" class="h-12 mb-4 ml-1 sm:ml-0" />
-      </a>
-    </div>
+    <!-- Logo + Description Section -->
+<div class="w-full sm:w-[45%] md:w-[22%] flex flex-col items-center sm:items-start">
+  <!-- Logo -->
+  <a href="/">
+    <img src="/images/logo.png" alt="Global Education Council" class="h-12 mb-4 ml-1 sm:ml-0" />
+  </a>
+
+  <!-- Description -->
+  <div class="px-4 sm:px-0 mt-4">
+    <p class="text-sm text-center sm:text-left text-gray-500">
+      With 20+ years of experience, Global Education Council provides expert guidance and admission support for engineering, medical, pharmacy, nursing, and management courses in India and abroad.
+    </p>
+  </div>
+</div>
+
 
     <!-- Contact Info -->
-    <div class="w-full sm:w-[45%] md:w-[22%]">
-      <h3 class="font-semibold mb-2 text-lg text-blue-700 ml-1 sm:ml-0">Contact Info</h3>
-      <ul class="space-y-2 text-sm ml-1 sm:ml-0">
-        <li class="flex items-start gap-2">
-          <span class="text-blue-600">📍</span>
-          <a href="https://www.google.com/maps?q=705,+Flat+no+203,+Sector+5,+Vaishali,+Ghaziabad,+Uttar+Pradesh,+201010" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">
-            705, Flat no 203,<br>
-            Sector 5, Vaishali<br>
-            Ghaziabad, Uttar Pradesh<br>
-            Pin - 201010
-          </a>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-blue-600">📧</span>
-          <a href="mailto:chatdesk.gec@gmail.com" class="text-blue-700 underline hover:underline break-all">
-            chatdesk.gec@gmail.com
-          </a>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-blue-600">📞</span>
-          <a href="tel:+919392679540" class="text-blue-700 underline hover:underline">
-            +91 9392679540
-          </a>
-        </li>
-      </ul>
-    </div>
+  <div class="w-full sm:w-[45%] md:w-[22%]">
+  <h3 class="font-semibold mb-2 text-lg text-blue-700 ml-1 sm:ml-0">Contact Info</h3>
+  <ul class="space-y-2 text-sm ml-1 sm:ml-0">
+    
+    <!-- Location -->
+    <li class="flex items-start gap-2">
+      <img src="https://img.icons8.com/color/48/000000/google-maps-new.png" alt="Google Maps" class="w-5 h-5 mt-1" />
+      <a href="https://www.google.com/maps?q=705,+Flat+no+203,+Sector+5,+Vaishali,+Ghaziabad,+Uttar+Pradesh,+201010"
+         target="_blank" rel="noopener noreferrer"
+         class="text-blue-700 hover:underline">
+        705, Flat no 203,<br>
+        Sector 5, Vaishali<br>
+        Ghaziabad, Uttar Pradesh<br>
+        Pin - 201010
+      </a>
+    </li>
+
+    <!-- Email -->
+    <li class="flex items-start gap-2">
+      <img src="https://img.icons8.com/color/48/000000/gmail--v1.png" alt="Email" class="w-5 h-5 mt-1" />
+      <a href="mailto:chatdesk.gec@gmail.com" class="text-blue-700 underline hover:underline break-all">
+        chatdesk.gec@gmail.com
+      </a>
+    </li>
+
+    <!-- Phone -->
+    <li class="flex items-start gap-2">
+      <img src="https://img.icons8.com/fluency/48/000000/phone.png" alt="Phone" class="w-5 h-5 mt-1" />
+      <a href="tel:+919392679540" class="text-blue-700 underline hover:underline">
+        +91 9392679540
+      </a>
+    </li>
+
+  </ul>
+</div>
+
 
     <!-- Navigation (Only visible on desktop) -->
     <div class="w-full sm:w-[45%] md:w-[22%]">
@@ -124,11 +166,7 @@
     </div>
   </div>
 
-  <!-- Description -->
-  <div class="px-4 sm:px-6 mt-8 sm:mt-6">
-    <p class="text-sm text-center text-gray-500">
-With 20+ years of experience, Global Education Council provides expert guidance and admission support for engineering, medical, pharmacy, nursing, and management courses in India and abroad.    </p>
-  </div>
+  
 
   <!-- Bottom Bar -->
   <div class="mt-4 border-t pt-4 text-center text-xs sm:text-sm text-gray-500 px-4 sm:px-6">
