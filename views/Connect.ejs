@@ -18,145 +18,98 @@
 </div>
 
 
+<!-- Hero Section -->
 <section class="relative text-white overflow-hidden">
 
-  <!-- Desktop Layout -->
-  <div class="hidden md:flex h-[80vh] max-h-[700px]">
-  <!-- Left Video -->
-  <div class="w-[16%] h-full">
-    <img class="w-full h-full object-cover" src="/images/left.jpg" alt="">
-  </div>
-
-  <!-- Center Carousel + Text -->
-  <div class="relative w-[68%] flex items-center justify-center overflow-hidden">
-  <!-- Text Overlay -->
-  <div class="absolute top-1/4 z-30 text-center px-4 w-full">
-   <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[4.5vw] font-extrabold leading-tight tracking-tight space-y-4">
-  <span class="block text-white" style="text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);">
-    Let’s Start Your <span class="text-orange-400">Admission</span> Journey
-  </span>
-</h1>
-<p class="mt-4 text-white text-base sm:text-lg md:text-xl lg:text-xl font-medium" style="text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);">
-  Whether you’re a student exploring your future or a parent seeking the best for your child, our expert counsellors are here to help.
-</p>
-
-
-  </div>
-
-  <!-- Carousel Images -->
-  <div class="w-full h-full overflow-hidden relative">
-    <div id="carousel-desktop" class="h-full flex transition-transform duration-[1000ms] ease-in-out">
-      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide1.jpg" alt="">
-      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide2.jpg" alt="">
-      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide3.jpg" alt="">
-      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide4.jpg" alt="">
-    </div>
-
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/50 z-10 pointer-events-none"></div>
-  </div>
-  </div>
-
-
-  <!-- Right Video -->
-  <div class="w-[16%] h-full">
-        <img class="w-full h-full object-cover" src="/images/right.jpg" alt="">
-  </div>
-</div>
-
-
-  <!-- Mobile Layout -->
-<div class="flex flex-col md:hidden">
-    <!-- Carousel -->
-   <div class="relative w-full h-[50vh] sm:h-[60vh]">
-  <!-- Text Section -->
-  <div class="absolute top-1/4 z-30 text-center px-4 w-full">
-  <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[4.5vw] font-extrabold leading-tight tracking-tight space-y-4">
-  <span class="block text-white" style="text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);">
-    Let’s Start Your <span class="text-orange-400">Admission</span> Journey
-  </span>
-</h1>
-<p class="mt-4 text-white text-base sm:text-lg md:text-xl lg:text-2xl font-medium" style="text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);">
-  Whether you’re a student exploring your future or a parent seeking the best for your child, our expert counsellors are here to help.
-</p>
-
-
-</div>
-
-
-
-  <!-- Image Carousel -->
-  <div class="w-full h-full overflow-hidden relative">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/60 z-10"></div>
-
+  <!-- 🌐 Desktop Layout -->
+  <div class="hidden md:flex h-[80vh] max-h-[700px] relative items-center justify-center">
     <!-- Carousel Images -->
-    <div id="carousel-mobile" class="h-full flex transition-transform duration-[1000ms] ease-in-out z-0">
-      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide1.jpg" alt="">
-      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide2.jpg" alt="">
-      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide3.jpg" alt="">
-      <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide4.jpg" alt="">
-    </div>
-  </div>
-</div>
-
-
-    <!-- Videos with spacing -->
-    <hr class="my-3 border-gray-600" />
-
-    <div class="w-full h-[15vh]">
-          <img class="w-full h-full object-cover" src="/images/left.jpg" alt="">
-
+    <div class="w-full h-full overflow-hidden relative">
+      <div id="carousel-desktop" class="h-full flex transition-transform duration-[1000ms] ease-in-out">
+        <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide1.jpg" alt="">
+        <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide2.jpg" alt="">
+        <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide3.jpg" alt="">
+        <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide4.jpg" alt="">
+      </div>
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-black/50 z-10 pointer-events-none"></div>
     </div>
 
-    <hr class="my-3 border-gray-600" />
-
-    <div class="w-full h-[15vh] mb-4">
-          <img class="w-full h-full object-cover" src="/images/right.jpg" alt="">
-
+    <!-- Text Overlay -->
+    <div class="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6">
+      <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-xl mb-4">
+        Let’s Start Your <span class="text-orange-400">Admission Journey</span>
+      </h1>
+      <p class="text-sm sm:text-lg md:text-xl lg:text-2xl max-w-3xl text-white drop-shadow-md">
+        Whether you’re a student exploring your future or a parent seeking the best for your child, our expert counsellors are here to help.
+      </p>
     </div>
   </div>
 
-<script>
-  function setupInfiniteCarousel(id) {
-    const carousel = document.getElementById(id);
-    if (!carousel) return; // safeguard if element not found
+  <!-- 📱 Mobile Layout -->
+  <div class="flex flex-col md:hidden">
+    <div class="relative w-full h-[60vh]">
+      <!-- Carousel Images -->
+      <div class="w-full h-full overflow-hidden relative">
+        <div id="carousel-mobile" class="h-full flex transition-transform duration-[1000ms] ease-in-out z-0">
+          <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide1.jpg" alt="">
+          <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide2.jpg" alt="">
+          <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide3.jpg" alt="">
+          <img class="w-full h-full object-cover flex-shrink-0" src="/images/slide4.jpg" alt="">
+        </div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+      </div>
 
-    const slides = Array.from(carousel.children);
-    const slideCount = slides.length;
+      <!-- Text Overlay -->
+      <div class="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-4">
+        <h1 class="text-xl sm:text-3xl font-extrabold drop-shadow-xl leading-snug mb-3">
+          Let’s Start Your <span class="text-orange-400">Admission Journey</span>
+        </h1>
+        <p class="text-sm sm:text-base text-white drop-shadow-md">
+          Whether you’re a student exploring your future or a parent seeking the best for your child, our expert counsellors are here to help.
+        </p>
+      </div>
+    </div>
+  </div>
 
-    // Clone first slide and append
-    const firstClone = slides[0].cloneNode(true);
-    carousel.appendChild(firstClone);
+  <!-- Carousel Script -->
+  <script>
+    function setupInfiniteCarousel(id) {
+      const carousel = document.getElementById(id);
+      if (!carousel) return;
 
-    let index = 0;
+      const slides = Array.from(carousel.children);
+      const slideCount = slides.length;
 
-    function moveSlide() {
-      index++;
-      carousel.style.transition = "transform 1s ease-in-out";
-      carousel.style.transform = `translateX(-${index * 100}%)`;
+      const firstClone = slides[0].cloneNode(true);
+      carousel.appendChild(firstClone);
 
-      // When it reaches the clone, reset to the original first slide
-      if (index === slideCount) {
-        setTimeout(() => {
-          carousel.style.transition = "none";
-          carousel.style.transform = `translateX(0%)`;
-          index = 0;
-        }, 1000);
+      let index = 0;
+
+      function moveSlide() {
+        index++;
+        carousel.style.transition = "transform 1s ease-in-out";
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+
+        if (index === slideCount) {
+          setTimeout(() => {
+            carousel.style.transition = "none";
+            carousel.style.transform = `translateX(0%)`;
+            index = 0;
+          }, 1000);
+        }
       }
+
+      setInterval(moveSlide, 3000);
     }
 
-    setInterval(moveSlide, 3000);
-  }
-
-  // Call for both carousels
-  setupInfiniteCarousel("carousel-desktop");
-  setupInfiniteCarousel("carousel-mobile");
-</script>
-
-
+    setupInfiniteCarousel("carousel-desktop");
+    setupInfiniteCarousel("carousel-mobile");
+  </script>
 
 </section>
+
 
   
   <!-- Contact Form -->
